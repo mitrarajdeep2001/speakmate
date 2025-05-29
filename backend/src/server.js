@@ -18,10 +18,8 @@ import { fileURLToPath } from "url";
 const app = express();
 const PORT = process.env.PORT;
 
-// const __dirname = path.resolve();
-
 const allowedOrigins = [
-  import.meta.env.VITE_BACKEND_URL,
+  process.env.FRONTEND_URL,
 ];
 
 app.use(
@@ -60,14 +58,6 @@ app.use("/api/tutorials", tutorialRoutes);
 app.use("/api/prompts", promptRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/others", othersRoutes);
-
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-//   });
-// }
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
