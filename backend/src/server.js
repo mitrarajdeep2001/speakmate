@@ -21,9 +21,7 @@ const PORT = process.env.PORT;
 // const __dirname = path.resolve();
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://192.168.0.202:5173",
-  "https://t9g6xnd1-5173.inc1.devtunnels.ms",
+  import.meta.env.VITE_BACKEND_URL,
 ];
 
 app.use(
