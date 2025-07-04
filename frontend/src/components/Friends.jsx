@@ -16,7 +16,7 @@ const Friends = ({ count = 3, pageType = "home" }) => {
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
           Your Friends
         </h2>
-        {(pageType === "home" && friends.length > 0) && (
+        {(pageType === "home" && friends.length > 4) && (
           <Link to="/friends" className="btn btn-outline btn-sm">
             <UsersIcon className="mr-2 size-4" />
             View More

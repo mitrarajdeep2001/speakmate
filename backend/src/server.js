@@ -49,7 +49,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.join(__dirname, "..");
 
 // Serve static files from the root public directory
-app.use("/public", express.static(path.join(rootDir, "public")));
+app.use("/", express.static(path.join(rootDir, "public")));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
